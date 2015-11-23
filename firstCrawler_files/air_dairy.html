@@ -1,0 +1,832 @@
+
+<!-- saved from url=(0066)http://datacenter.mep.gov.cn/report/air_daily/air_dairy.jsp?page=1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script language="javascript">
+		var lang = '';
+	function jump(maxp){
+		var err1 ="页码必须是整数！";
+		var err2 ="页码超出范围！";
+		var url = "air_dairy.jsp?city=&startdate=2015-11-22&enddate=2015-11-22";
+		var page = document.getElementById("pageNum").value;
+		if(checkIsInteger(page))
+			alert(err1);
+		else if(parseInt(page)>parseInt(maxp) || parseInt(page)<=0)
+			alert(err2);
+		else{
+			url += "&page="+page;
+			window.location.href = url;
+		}
+	}
+	
+
+	function jumpTo(p){
+		var url = "air_dairy.jsp?city=&startdate=2015-11-22&enddate=2015-11-22";
+		url += "&page="+p;
+		window.location.href = url;
+	}
+	function forwardToMain(){
+		//document.location.href = "http://datacenter.mep.gov.cn:80/report/";
+		document.location.href = "http://datacenter.mep.gov.cn:80/";
+		
+	}
+    function checkForm1(){
+    	var date = document.getElementById('startdate').value;
+    	var stopDate = document.getElementById('enddate').value;
+    	if(date!=""&&stopDate!=""){
+    		date = date.replace(/-/g,'/');
+    		stopDate = stopDate.replace(/-/g,'/'); 
+    	 	var d1=new Date(date);   
+  			var d2=new Date(stopDate);
+			if(Date.parse(d1) - Date.parse(d2)>0){	
+			    return false;
+			}
+  		}
+  		if(date!=""&&stopDate==""){
+  			alert('您没有输入结束时间，请重新输入！');
+  			return false;
+  		}
+  		if(date==""&&stopDate!=""){
+  			alert('您没有输入开始时间，请重新输入！');
+  			return false;
+  		}
+    	return true;
+    }
+    
+</script>
+		<title>中华人民共和国环境保护部--政府网站数据中心</title>
+		<link href="pagination.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+<!--
+body {
+	background-image: url(/report/main/images/bk.jpg);
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+#conter {
+	float: left;
+	height: auto;
+	width: 982px;
+}
+
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.STYLE1 {
+	color: #b24910;
+	background-color: #FFFFEF;
+	text-align: right;
+	height: 30px
+}
+
+.STYLE2 {
+	color: #FFFFEF;
+}
+
+.STYLE3 {
+	color: #333333;
+}
+
+.STYLE4 {
+	color: #b24910;
+	background-color: #f3ecd4;
+	text-align: center;
+	width: 12%;
+	height: 30px
+}
+
+.webjx {
+	width: 0;
+	height: 98%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.con_div {
+	height: 28px;
+	text-align: left;
+	display: table-cell;
+	vertical-align: middle;
+	background-image: url(/report/main/images/di.jpg);
+	width: 98%;
+}
+
+A:link {
+	COLOR: #004e98
+}
+-->
+</style>
+		<script type="text/javascript">
+	function submitForm(){
+		document.citydayform.submit();
+	}
+</script>
+		<script language="JavaScript" src="indexdatejs.js"></script><link href="WdatePicker.css" rel="stylesheet" type="text/css"></head><body bgcolor="#FEFFF1" id="top"><div id="yyDateLayer" style="Z-index:9999;position: absolute; width: 142; height: 166; z-index: 9998; display: none">
+<span id="tmpSelectYearLayer" style="z-index: 9999;position: absolute;top: 2; left: 18;display: none"></span>
+<span id="tmpSelectMonthLayer" style="z-index: 9999;position: absolute;top: 2; left: 75;display: none"></span>
+<table border="0" cellspacing="1" cellpadding="0" width="142" height="160" bgcolor="#808080" onselectstart="return false">
+  <tbody><tr><td width="142" height="23" bgcolor="#FFFFFF"><table border="0" cellspacing="1" cellpadding="0" width="140" height="23">
+      <tbody><tr align="center"><td width="20" align="center" bgcolor="#808080" style="font-size:12px;cursor: hand;color: #FFD700" onclick="yyPrevM()" title="向前翻月" author="yy"><b author="yy">&lt;&lt;</b>
+        </td><td width="100" align="center" style="font-size:12px;cursor:default" author="yy">
+        <span author="yy" id="yyYearHead" onclick="tmpSelectYearInnerHTML(this.innerText)">2015</span>&nbsp;年&nbsp;<span id="yyMonthHead" author="yy" onclick="tmpSelectMonthInnerHTML(this.innerText)">11</span>&nbsp;月</td>
+        <td width="20" bgcolor="#808080" align="center" style="font-size:12px;cursor: hand;color: #FFD700" onclick="yyNextM()" title="往后翻月" author="yy"><b author="yy">&gt;&gt;</b></td></tr>
+    </tbody></table></td></tr>
+  <tr><td width="142" height="18" bgcolor="#808080">
+<table border="0" cellspacing="0" cellpadding="0" width="140" height="1" style="cursor:default">
+<tbody><tr align="center"><td style="font-size:12px;color:#FFFFFF" author="yy">日</td>
+<td style="font-size:12px;color:#FFFFFF" author="yy">一</td><td style="font-size:12px;color:#FFFFFF" author="yy">二</td>
+<td style="font-size:12px;color:#FFFFFF" author="yy">三</td><td style="font-size:12px;color:#FFFFFF" author="yy">四</td>
+<td style="font-size:12px;color:#FFFFFF" author="yy">五</td><td style="font-size:12px;color:#FFFFFF" author="yy">六</td></tr>
+</tbody></table></td></tr>
+  <tr><td width="142" height="120">
+    <table border="0" cellspacing="1" cellpadding="0" width="140" height="120" bgcolor="#FFFFFF">
+ <tbody><tr align="center">
+<td width="20" height="20" id="yyDay0" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>1</b></td>
+<td width="20" height="20" id="yyDay1" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>2</b></td>
+<td width="20" height="20" id="yyDay2" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>3</b></td>
+<td width="20" height="20" id="yyDay3" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>4</b></td>
+<td width="20" height="20" id="yyDay4" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>5</b></td>
+<td width="20" height="20" id="yyDay5" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>6</b></td>
+<td width="20" height="20" id="yyDay6" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>7</b></td>
+</tr>
+ <tr align="center">
+<td width="20" height="20" id="yyDay7" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>8</b></td>
+<td width="20" height="20" id="yyDay8" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>9</b></td>
+<td width="20" height="20" id="yyDay9" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>10</b></td>
+<td width="20" height="20" id="yyDay10" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>11</b></td>
+<td width="20" height="20" id="yyDay11" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>12</b></td>
+<td width="20" height="20" id="yyDay12" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>13</b></td>
+<td width="20" height="20" id="yyDay13" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>14</b></td>
+</tr>
+ <tr align="center">
+<td width="20" height="20" id="yyDay14" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>15</b></td>
+<td width="20" height="20" id="yyDay15" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>16</b></td>
+<td width="20" height="20" id="yyDay16" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>17</b></td>
+<td width="20" height="20" id="yyDay17" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>18</b></td>
+<td width="20" height="20" id="yyDay18" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>19</b></td>
+<td width="20" height="20" id="yyDay19" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>20</b></td>
+<td width="20" height="20" id="yyDay20" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>21</b></td>
+</tr>
+ <tr align="center">
+<td width="20" height="20" id="yyDay21" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>22</b></td>
+<td width="20" height="20" id="yyDay22" style="font-size: 12px; cursor: pointer; background-color: rgb(255, 215, 0);" author="yy" onclick="yyDayClick(this.innerText)"><b>23</b></td>
+<td width="20" height="20" id="yyDay23" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>24</b></td>
+<td width="20" height="20" id="yyDay24" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>25</b></td>
+<td width="20" height="20" id="yyDay25" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>26</b></td>
+<td width="20" height="20" id="yyDay26" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>27</b></td>
+<td width="20" height="20" id="yyDay27" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>28</b></td>
+</tr>
+ <tr align="center">
+<td width="20" height="20" id="yyDay28" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>29</b></td>
+<td width="20" height="20" id="yyDay29" style="font-size: 12px; cursor: pointer; background-color: rgb(173, 216, 230);" author="yy" onclick="yyDayClick(this.innerText)"><b>30</b></td>
+<td width="20" height="20" id="yyDay30" style="font-size: 12px; cursor: default;" author="yy" onclick="yyDayClick(this.innerText)"></td>
+<td width="20" height="20" id="yyDay31" style="font-size: 12px; cursor: default;" author="yy" onclick="yyDayClick(this.innerText)"></td>
+<td width="20" height="20" id="yyDay32" style="font-size: 12px; cursor: default;" author="yy" onclick="yyDayClick(this.innerText)"></td>
+<td width="20" height="20" id="yyDay33" style="font-size: 12px; cursor: default;" author="yy" onclick="yyDayClick(this.innerText)"></td>
+<td width="20" height="20" id="yyDay34" style="font-size: 12px; cursor: default;" author="yy" onclick="yyDayClick(this.innerText)"></td>
+</tr>
+      <tr align="center"><td width="20" height="20" style="font-size: 12px; cursor: default;" id="yyDay35" author="yy" onclick="yyDayClick(this.innerText)"></td>
+        <td width="20" height="20" style="font-size: 12px; cursor: default;" id="yyDay36" author="yy" onclick="yyDayClick(this.innerText)"></td>
+        <td colspan="5" align="right" author="yy"><span onclick="closeLayer()" style="font-size:12px;cursor: hand" author="yy"><u>关闭</u></span></td></tr>
+    </tbody></table></td></tr><tr><td>
+        <table border="0" cellspacing="1" cellpadding="0" width="100%" bgcolor="#FFFFFF">
+          <tbody><tr>
+</tr></tbody></table></td></tr></tbody></table></div>
+
+		<script language="javascript" type="text/javascript" src="WdatePicker.js"></script>
+		<script language="JavaScript" src="commJS.js"></script>
+		<link href="style.css" rel="stylesheet" type="text/css">
+	
+	
+		<table width="1002" align="center" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td width="10" background="left_bk.jpg">
+					&nbsp;
+				</td>
+				<td>
+					<div id="conter" style="background-color: #FFFFFF;">
+						<div id="top">
+
+
+
+
+
+	
+
+		<title>中华人民共和国环境保护部--政府网站数据中心</title>
+	
+	<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+var timerID=null; 
+var timerRunning=false; 
+file://启动 
+function startclock() 
+{ 
+stopclock(); 
+time(); 
+} 
+
+file://停止 
+function stopclock() 
+{ 
+if(timerRunning) 
+clearTimeout(timerID); 
+timerRunning=false; 
+} 
+
+file://实现模块 
+function time() 
+{ 
+file://使用new操作符创建时间对象 
+var now=new Date(); 
+var yr=now.getYear(); 
+var mName=now.getMonth()+1; 
+var dayNr=((now.getDate()<10)?"0":"")+now.getDate(); 
+var dName=now.getDay(); 
+var ampm=(now.getHours()>=12)?"下午":"上午" 
+var hours=now.getHours(); 
+var minutes=((now.getMinutes()<10)?":0":":")+now.getMinutes(); 
+var seconds=((now.getSeconds()<10)?":0":":")+now.getSeconds(); 
+
+file://判断月份 
+if(mName==1)Month="01"; 
+if(mName==2)Month="02"; 
+if(mName==3)Month="03"; 
+if(mName==4)Month="04"; 
+if(mName==5)Month="05"; 
+if(mName==6)Month="06"; 
+if(mName==7)Month="07"; 
+if(mName==8)Month="08"; 
+if(mName==9)Month="09"; 
+if(mName==10)Month="10"; 
+if(mName==11)Month="11"; 
+if(mName==12)Month="12"; 
+if(dName==1)dName="一"; 
+if(dName==2)dName="二"; 
+if(dName==3)dName="三"; 
+if(dName==4)dName="四"; 
+if(dName==5)dName="五"; 
+if(dName==6)dName="六"; 
+if(dName==0)dName="日"; 
+if(yr<1000) yr=yr+1900;
+
+var MonthDayYear=(""+yr+"年"+Month+"月"+dayNr+"日  星期"+dName); 
+var TimeValue=(""+hours+minutes); 
+document.getElementById("dateTime").innerHTML = MonthDayYear+" "+TimeValue;
+//document.all.dateTimeValue.innerHTML=MonthDayYear+" "+TimeValue;
+timerID=setTimeout("time()",1000); 
+timerRunning=true; 
+} 
+//-->
+</script>
+	<link href="style(1).css" rel="stylesheet" type="text/css">
+	
+		<div id="top">
+			<div>
+				<img src="banner.jpg" width="982" height="90">
+			</div>
+			<div style="background-image: url(/report/main/images/nav.jpg); height: 28px; margin: 0px auto 0px auto;">
+				<div style="margin: 6px auto 0px 15px; float: left; font-size: 12px; color: #FFFFFF; width: 500px; vertical-align: bottom;" align="left" class="font">
+				</div>
+				<div id="dateTime" style="float: right; margin: 4px 13px 0px auto; width: auto" align="right" class="font">2015年11月23日  星期一 10:51</div>
+			</div>
+		</div>
+	
+<script type="text/javascript">
+	time();
+</script>
+
+</div>
+						<div style="margin: 5px auto 0px auto;" align="center">
+							<div style="height: 40px;" align="center">
+								<div class="listtitle" style="width: 98%; text-indent: 48px;" align="left">
+									<table width="98%">
+										<tbody><tr class="text_middle" style="font-size: 12px; color: #FFFFFF;">
+											<td width="60%" align="left" style="text-indent: 48px;">
+												您的位置：
+												<a href="http://www.mep.gov.cn/" style="color: #FFFFFF">首页</a>
+												<img src="jiantou.gif">
+												<a href="http://datacenter.mep.gov.cn/" style="color: #FFFFFF">数据中心</a>
+												<img src="jiantou.gif">
+												<a href="http://datacenter.mep.gov.cn/report/air_daily/air_dairy.jsp" style="color: #FFFFFF"> 全国城市空气质量日报</a>
+											</td>
+											<td width="40%" align="right">
+												<a href="http://datacenter.mep.gov.cn/" style="color: #FFFFFF; margin: auto auto auto auto">返回数据中心</a>
+											</td>
+										</tr>
+									</tbody></table>
+								</div>
+							</div>
+							<div class="font">
+								<form name="citydayform" action="http://datacenter.mep.gov.cn/report/air_daily/air_dairy.jsp" method="post" style="margin: 0px auto 0px auto;" onsubmit="return checkForm1();">
+									<table width="95%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolorlight="#d9d7b2" bordercolordark="#ffffff" class="font">
+										<tbody><tr>
+											<td width="5%" height="30" bgcolor="#FFFFEF" align="right" class="STYLE1">
+												城市:
+											</td>
+											<td width="8%" bgcolor="#FFFFFF">
+												&nbsp;
+												<input type="text" name="city" value="">
+											</td>
+											<td width="5%" height="30" bgcolor="#FFFFEF" align="right" class="STYLE1 STYLE1">
+												日期:
+											</td>
+											<td width="30%" bgcolor="#FFFFFF">
+												&nbsp; 从:
+												<input type="text" id="startdate" name="startdate" readonly="true" onfocus="WdatePicker({ el: this.id, dateFmt: &#39;yyyy-MM-dd&#39;, skin: &#39;whyGreen&#39;,maxDate:&#39;#F{$dp.$D(\&#39;enddate\&#39;)}&#39; })" style="text-align: center;cursor: pointer;width: 130px;height: 21px;margin-top:0px;" class="Wdate" value="2015-11-22">
+												到:
+												<input type="text" id="enddate" name="enddate" readonly="true" onfocus="WdatePicker({ el: this.id, dateFmt: &#39;yyyy-MM-dd&#39;, skin: &#39;whyGreen&#39;,minDate:&#39;#F{$dp.$D(\&#39;startdate\&#39;)}&#39; })" style="text-align: center;cursor: pointer;width: 130px;height: 21px;margin-top:0px;" class="Wdate" value="2015-11-22">
+											</td>
+											<td width="8%" bgcolor="#FFFFFF">
+												<div align="center">
+													<input type="image" src="search.gif" width="83" height="19">
+												</div>
+											</td>
+										</tr>
+									</tbody></table>
+								</form>
+							</div>
+						</div>
+						<br>
+						<center>
+							<div class="font12">
+								<script language="javascript" src="reportServlet" charset="UTF-8">
+</script>
+<form name="report1_turnPageForm" method="post" action="http://datacenter.mep.gov.cn/report/air_daily/air_dairy.jsp?t_i_m_e=1448247135595" style="display:none">
+<input type="hidden" name="page" value="1">
+<input type="hidden" name="reportParamsId" value="116720">
+<input type="hidden" name="report1_currPage" value="1">
+<input type="hidden" name="report1_cachedId" value="39794">
+</form><script language="javascript">
+	function report1_toPage( pageNo ) {
+	if( pageNo < 1 || pageNo > report1_getTotalPage() ) return;
+		document.report1_turnPageForm.report1_currPage.value = pageNo;
+		document.report1_turnPageForm.submit();
+	}
+</script>
+<script language="javascript">
+	function report1_getCurrPage() {
+		return 1;
+	}
+	function report1_getTotalPage() {
+		return 1;
+	}
+	var report1_cachedId = "39794";
+</script>
+<script language="javascript">
+	function report1_saveAsExcel() {
+		var address = "http://datacenter.mep.gov.cn:80/report/reportServlet?action=4&isDialog=1";
+		rq_showPopWin( address, 300, 210, null );
+	}
+	function _saveAsExcel2( returnVal) {
+		document.getElementById( "report1_saveAs_frame" ).src = "http://datacenter.mep.gov.cn:80/report/reportServlet?action=3&file=air_daily%2FAirDairyReport.raq&columns=0&srcType=file&width=-1&height=-1&reportParamsId=116720&cachedId=39794&t_i_m_e=1448247135596" + returnVal;
+	}
+</script>
+<script language="javascript">
+	function report1_saveAsPdf() {
+		var address = "http://datacenter.mep.gov.cn:80/report/reportServlet?action=25&isDialog=1";
+		rq_showPopWin( address, 300, 200, null );
+	}
+	function _saveAsPdf2( returnVal ) {
+		document.getElementById( "report1_saveAs_frame" ).src = "http://datacenter.mep.gov.cn:80/report/reportServlet?action=6&file=air_daily%2FAirDairyReport.raq&columns=0&srcType=file&reportParamsId=116720&cachedId=39794&t_i_m_e=1448247135596" + returnVal;
+	}
+</script>
+
+<script language="javascript">
+	function report1_saveAsWord() {
+		document.getElementById( "report1_saveAs_frame" ).src = "http://datacenter.mep.gov.cn:80/report/reportServlet?action=7&file=air_daily%2FAirDairyReport.raq&columns=0&srcType=file&reportParamsId=116720&cachedId=39794&t_i_m_e=1448247135596";
+	}
+</script>
+
+<iframe name="report1_saveAs_frame" id="report1_saveAs_frame" src="reportServlet.html" style="display:none"></iframe>
+<script language="javascript">
+	function report1_saveAsText() {
+		document.getElementById( "report1_saveAs_frame" ).src = "http://datacenter.mep.gov.cn:80/report/reportServlet?action=18&file=air_daily%2FAirDairyReport.raq&srcType=file&separator=%09&lineBreak=%0A&reportParamsId=116720&cachedId=39794&t_i_m_e=1448247135596";
+	}
+</script>
+
+<script language="javascript">
+	function report1_print() {
+		document.getElementById( "report1_printIFrame" ).src = "http://datacenter.mep.gov.cn:80/report/reportServlet?action=2&name=report1&reportFileName=air_daily%2FAirDairyReport.raq&srcType=file&savePrintSetup=no&appletJarName=runqianReport4Applet.jar&serverPagedPrint=no&mirror=no&reportParamsId=116720&cachedId=39794&t_i_m_e=1448247135596";
+	}
+</script>
+<iframe name="report1_printIFrame" id="report1_printIFrame" src="reportServlet.html" style="position:absolute;left:-100px;top:-100px" width="50" height="50"></iframe>
+<script language="javascript">
+	var report1oldstatus = "";
+	function report1437139over(){
+		report1oldstatus = window.status;
+		window.status = "环境保护部政府网站数据中心";
+	}
+	function report1437139out(){
+		window.status = report1oldstatus;
+	}
+</script>
+<style id="report1_style">
+	.report1_1 { text-align:center;vertical-align:middle;font-family:宋体;font-size:12px;color:#B24910;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:solid;border-left-width:1px;border-left-color:#D9D7B2;border-top-style:solid;border-top-width:1px;border-top-color:#D9D7B2;border-right-style:solid;border-right-width:1px;border-right-color:#D9D7B2;border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:#D9D7B2;background-color:#F3ECD4;word-break:keep-all;}
+	.report1_2 { text-align:left;vertical-align:middle;font-family:Dialog;font-size:12px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:none;border-left-width:1px;border-left-color:#000000;border-top-style:solid;border-top-width:1px;border-top-color:#D9D7B2;border-right-style:none;border-right-width:1px;border-right-color:#000000;border-bottom-style:none;border-bottom-width:1px;border-bottom-color:#000000;background-color:#FFFFFF;word-break:keep-all;}
+	.report1_3 { text-align:left;vertical-align:middle;font-family:Dialog;font-size:12px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:none;border-left-width:1px;border-left-color:#000000;border-top-style:none;border-top-width:1px;border-top-color:#000000;border-right-style:none;border-right-width:1px;border-right-color:#000000;border-bottom-style:none;border-bottom-width:1px;border-bottom-color:#000000;background-color:#FFFFFF;word-break:keep-all;}
+	.report1_4 { text-align:center;vertical-align:middle;font-family:宋体;font-size:12px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:solid;border-left-width:1px;border-left-color:#D9D7B2;border-top-style:solid;border-top-width:1px;border-top-color:#D9D7B2;border-right-style:solid;border-right-width:1px;border-right-color:#D9D7B2;border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:#D9D7B2;background-color:#FFFFFF;word-break:keep-all;}
+	.report1_5 { text-align:right;vertical-align:middle;font-family:Dialog;font-size:12px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:none;border-left-width:1px;border-left-color:#000000;border-top-style:none;border-top-width:1px;border-top-color:#000000;border-right-style:none;border-right-width:1px;border-right-color:#000000;border-bottom-style:none;border-bottom-width:1px;border-bottom-color:#000000;background-color:#FFFFFF;word-break:keep-all;}
+	.report1_6 { text-align:left;vertical-align:middle;font-family:黑体;font-size:16px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:none;border-left-width:1px;border-left-color:#000000;border-top-style:none;border-top-width:1px;border-top-color:#000000;border-right-style:none;border-right-width:1px;border-right-color:#000000;border-bottom-style:none;border-bottom-width:1px;border-bottom-color:#000000;background-color:transparent;word-break:keep-all;}
+	.report1_7 { text-align:left;vertical-align:middle;font-family:宋体;font-size:12px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:none;border-left-width:1px;border-left-color:#000000;border-top-style:none;border-top-width:1px;border-top-color:#000000;border-right-style:none;border-right-width:1px;border-right-color:#000000;border-bottom-style:none;border-bottom-width:1px;border-bottom-color:#000000;background-color:#FFFFFF;word-break:keep-all;}
+	.report1_8 { text-align:center;vertical-align:middle;font-family:Dialog;font-size:12px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:none;border-left-width:1px;border-left-color:#000000;border-top-style:none;border-top-width:1px;border-top-color:#000000;border-right-style:none;border-right-width:1px;border-right-color:#000000;border-bottom-style:none;border-bottom-width:1px;border-bottom-color:#000000;background-color:#FFFFFF;word-break:keep-all;}
+	.report1_9 { text-align:center;vertical-align:middle;font-family:宋体;font-size:12px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:none;border-left-width:1px;border-left-color:#000000;border-top-style:solid;border-top-width:1px;border-top-color:#D9D7B2;border-right-style:none;border-right-width:1px;border-right-color:#000000;border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:#D9D7B2;background-color:#F5F1DF;word-break:keep-all;}
+	.report1_10 { text-align:center;vertical-align:middle;font-family:宋体;font-size:12px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:solid;border-left-width:1px;border-left-color:#D9D7B2;border-top-style:solid;border-top-width:1px;border-top-color:#D9D7B2;border-right-style:none;border-right-width:1px;border-right-color:#000000;border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:#D9D7B2;background-color:#F5F1DF;word-break:keep-all;}
+	.report1_11 { text-align:center;vertical-align:middle;font-family:黑体;font-size:16px;color:#333333;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:none;border-left-width:1px;border-left-color:#000000;border-top-style:solid;border-top-width:1px;border-top-color:#D9D7B2;border-right-style:none;border-right-width:1px;border-right-color:#000000;border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:#D9D7B2;background-color:#F5F1DF;word-break:keep-all;}
+	.report1_12 { text-align:center;vertical-align:middle;font-family:宋体;font-size:12px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:none;border-left-width:1px;border-left-color:#000000;border-top-style:solid;border-top-width:1px;border-top-color:#D9D7B2;border-right-style:solid;border-right-width:1px;border-right-color:#D9D7B2;border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:#D9D7B2;background-color:#F5F1DF;word-break:keep-all;}
+	.report1_13 { text-align:right;vertical-align:middle;font-family:Dialog;font-size:12px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:none;border-left-width:1px;border-left-color:#000000;border-top-style:solid;border-top-width:1px;border-top-color:#D9D7B2;border-right-style:none;border-right-width:1px;border-right-color:#000000;border-bottom-style:none;border-bottom-width:1px;border-bottom-color:#000000;background-color:#FFFFFF;word-break:keep-all;}
+	.report1_14 { text-align:center;vertical-align:middle;font-family:宋体;font-size:12px;color:#B34910;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:solid;border-left-width:1px;border-left-color:#D9D7B2;border-top-style:solid;border-top-width:1px;border-top-color:#D9D7B2;border-right-style:solid;border-right-width:1px;border-right-color:#D9D7B2;border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:#D9D7B2;background-color:#F3ECD4;word-break:keep-all;}
+	.report1_15 { text-align:left;vertical-align:middle;font-family:Dialog;font-size:12px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;border-left-style:none;border-left-width:1px;border-left-color:#000000;border-top-style:none;border-top-width:1px;border-top-color:#000000;border-right-style:none;border-right-width:1px;border-right-color:#000000;border-bottom-style:none;border-bottom-width:1px;border-bottom-color:#000000;background-color:#EEEEEE;word-break:keep-all;}
+</style>
+<table id="report1" cellspacing="0" cellpadding="0" onmouseout="report1437139out()" style="width:933px;table-layout:fixed;border-collapse:collapse">
+	<colgroup>
+		<col style="width:1px;">
+		<col style="width:96px;">
+		<col style="width:175px;">
+		<col style="width:195px;">
+		<col style="width:158px;">
+		<col style="width:148px;">
+		<col style="width:160px;">
+	</colgroup>
+	<tbody><tr height="30" style="height:30px;">
+		<td class="report1_10"></td>
+		<td onmouseover="report1437139over()" class="report1_9"></td>
+		<td colspan="4" class="report1_11">全&nbsp;国&nbsp;城&nbsp;市&nbsp;空&nbsp;气&nbsp;质&nbsp;量&nbsp;日&nbsp;报</td>
+		<td onmouseover="report1437139over()" class="report1_12"></td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_1">序号</td>
+		<td onmouseover="report1437139over()" class="report1_1">城市</td>
+		<td class="report1_1">日期</td>
+		<td onmouseover="report1437139over()" class="report1_1">AQI指数</td>
+		<td onmouseover="report1437139over()" class="report1_14">空气质量级别</td>
+		<td onmouseover="report1437139over()" class="report1_1">首要污染物</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">1</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">北京市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td class="report1_4" style="color:#00A7D1;">69</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">PM2.5</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00FF00;">2</td>
+		<td class="report1_4" style="color:#00FF00;">天津市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">46</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">优</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;"></td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">3</td>
+		<td class="report1_4" style="color:#00A7D1;">石家庄市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td class="report1_4" style="color:#00A7D1;">57</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">NO2</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">4</td>
+		<td class="report1_4" style="color:#00A7D1;">唐山市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">54</td>
+		<td class="report1_4" style="color:#00A7D1;">良</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">PM10</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">5</td>
+		<td class="report1_4" style="color:#00FF00;">秦皇岛市</td>
+		<td class="report1_4" style="color:#00FF00;">2015-11-22</td>
+		<td class="report1_4" style="color:#00FF00;">25</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">优</td>
+		<td class="report1_4" style="color:#00FF00;"></td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">6</td>
+		<td class="report1_4" style="color:#00A7D1;">邯郸市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">55</td>
+		<td class="report1_4" style="color:#00A7D1;">良</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">NO2</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">7</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">邢台市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">54</td>
+		<td class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">PM2.5</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">8</td>
+		<td class="report1_4" style="color:#00A7D1;">保定市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">59</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">良</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">PM2.5</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00FF00;">9</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">承德市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">2015-11-22</td>
+		<td class="report1_4" style="color:#00FF00;">40</td>
+		<td class="report1_4" style="color:#00FF00;">优</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;"></td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">10</td>
+		<td class="report1_4" style="color:#00A7D1;">沧州市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td class="report1_4" style="color:#00A7D1;">55</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">NO2</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">11</td>
+		<td class="report1_4" style="color:#00A7D1;">廊坊市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">60</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">PM2.5</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">12</td>
+		<td class="report1_4" style="color:#00A7D1;">衡水市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td class="report1_4" style="color:#00A7D1;">57</td>
+		<td class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">PM2.5</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">13</td>
+		<td class="report1_4" style="color:#00FF00;">张家口市</td>
+		<td class="report1_4" style="color:#00FF00;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">47</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">优</td>
+		<td class="report1_4" style="color:#00FF00;"></td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">14</td>
+		<td class="report1_4" style="color:#00FF00;">太原市</td>
+		<td class="report1_4" style="color:#00FF00;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">42</td>
+		<td class="report1_4" style="color:#00FF00;">优</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;"></td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">15</td>
+		<td class="report1_4" style="color:#00A7D1;">大同市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td class="report1_4" style="color:#00A7D1;">58</td>
+		<td class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">CO</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">16</td>
+		<td class="report1_4" style="color:#00A7D1;">阳泉市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td class="report1_4" style="color:#00A7D1;">51</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">良</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">SO2</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">17</td>
+		<td class="report1_4" style="color:#00FF00;">长治市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">50</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">优</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;"></td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">18</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">晋城市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">67</td>
+		<td class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">CO</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">19</td>
+		<td class="report1_4" style="color:#00A7D1;">朔州市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td class="report1_4" style="color:#00A7D1;">51</td>
+		<td class="report1_4" style="color:#00A7D1;">良</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">SO2</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">20</td>
+		<td class="report1_4" style="color:#00A7D1;">晋中市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td class="report1_4" style="color:#00A7D1;">55</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">SO2</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">21</td>
+		<td class="report1_4" style="color:#00FF00;">运城市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">2015-11-22</td>
+		<td class="report1_4" style="color:#00FF00;">47</td>
+		<td class="report1_4" style="color:#00FF00;">优</td>
+		<td class="report1_4" style="color:#00FF00;"></td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">22</td>
+		<td class="report1_4" style="color:#00A7D1;">忻州市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">56</td>
+		<td class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">CO</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">23</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">临汾市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">69</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">良</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">PM2.5</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">24</td>
+		<td class="report1_4" style="color:#00A7D1;">吕梁市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">82</td>
+		<td class="report1_4" style="color:#00A7D1;">良</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">CO</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">25</td>
+		<td class="report1_4" style="color:#00A7D1;">呼和浩特市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td class="report1_4" style="color:#00A7D1;">57</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">PM10</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">26</td>
+		<td class="report1_4" style="color:#00A7D1;">包头市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">62</td>
+		<td class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">PM10</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">27</td>
+		<td class="report1_4" style="color:#00A7D1;">乌海市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">71</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">良</td>
+		<td class="report1_4" style="color:#00A7D1;">PM10</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" class="report1_4" style="color:#00A7D1;">28</td>
+		<td class="report1_4" style="color:#00A7D1;">赤峰市</td>
+		<td class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td class="report1_4" style="color:#00A7D1;">53</td>
+		<td class="report1_4" style="color:#00A7D1;">良</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">PM10</td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">29</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">通辽市</td>
+		<td class="report1_4" style="color:#00FF00;">2015-11-22</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00FF00;">43</td>
+		<td class="report1_4" style="color:#00FF00;">优</td>
+		<td class="report1_4" style="color:#00FF00;"></td>
+	</tr>
+	<tr height="30" style="height:30px;">
+		<td colspan="2" onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">30</td>
+		<td class="report1_4" style="color:#00A7D1;">鄂尔多斯市</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">2015-11-22</td>
+		<td class="report1_4" style="color:#00A7D1;">64</td>
+		<td class="report1_4" style="color:#00A7D1;">良</td>
+		<td onmouseover="report1437139over()" class="report1_4" style="color:#00A7D1;">PM2.5</td>
+	</tr>
+	<tr height="25" style="height:25px;">
+		<td colspan="3" onmouseover="report1437139over()" class="report1_7">记录总数：<b><font color="#004e98">367</font></b>　　总页数：<b><font color="#004e98">13</font></b></td>
+		<td onmouseover="report1437139over()" class="report1_8">每页记录数：<b><font color="#004e98">30</font></b></td>
+		<td class="report1_5" style="padding-right:4px;">首页 上一页</td>
+		<td class="report1_8"><a href="javascript: jumpTo(2)">下一页</a> <a href="javascript: jumpTo(13)">末页</a></td>
+		<td class="report1_5"><input type="text" name="pageNum" value="1" size="5"> <input type="button" value="跳转" onclick="jump(&#39;13&#39;);"></td>
+	</tr>
+	<tr height="25" style="height:25px;">
+		<td class="report1_3"></td>
+		<td class="report1_3"></td>
+		<td onmouseover="report1437139over()" class="report1_3"></td>
+		<td class="report1_3"></td>
+		<td class="report1_3"></td>
+		<td onmouseover="report1437139over()" class="report1_3"></td>
+		<td class="report1_5"><a href="http://datacenter.mep.gov.cn/report/air_daily/air_dairy.jsp?page=1#" onclick="forwardToMain();"><img src="forwardIndex.gif" border="no"></a></td>
+	</tr>
+	<tr height="300" style="height:300px;">
+		<td class="report1_3"></td>
+		<td colspan="6" onmouseover="report1437139over()" class="report1_6"><img src="reportServlet(1)" width="932" height="300" border="no" usemap="#117078" ismap=""><map name="117078"><area shape="rect" coords="68,81,78,216" title="北京市 AQI指数 69">
+<area shape="rect" coords="96,126,106,216" title="天津市 AQI指数 46">
+<area shape="rect" coords="124,104,134,216" title="石家庄市 AQI指数 57">
+<area shape="rect" coords="152,110,162,216" title="唐山市 AQI指数 54">
+<area shape="rect" coords="180,167,190,216" title="秦皇岛市 AQI指数 25">
+<area shape="rect" coords="209,108,219,216" title="邯郸市 AQI指数 55">
+<area shape="rect" coords="237,110,247,216" title="邢台市 AQI指数 54">
+<area shape="rect" coords="265,100,275,216" title="保定市 AQI指数 59">
+<area shape="rect" coords="293,138,303,216" title="承德市 AQI指数 40">
+<area shape="rect" coords="321,108,331,216" title="沧州市 AQI指数 55">
+<area shape="rect" coords="349,98,359,216" title="廊坊市 AQI指数 60">
+<area shape="rect" coords="377,104,387,216" title="衡水市 AQI指数 57">
+<area shape="rect" coords="405,124,415,216" title="张家口市 AQI指数 47">
+<area shape="rect" coords="434,134,444,216" title="太原市 AQI指数 42">
+<area shape="rect" coords="462,102,472,216" title="大同市 AQI指数 58">
+<area shape="rect" coords="490,116,500,216" title="阳泉市 AQI指数 51">
+<area shape="rect" coords="518,118,528,216" title="长治市 AQI指数 50">
+<area shape="rect" coords="546,85,556,216" title="晋城市 AQI指数 67">
+<area shape="rect" coords="574,116,584,216" title="朔州市 AQI指数 51">
+<area shape="rect" coords="602,108,612,216" title="晋中市 AQI指数 55">
+<area shape="rect" coords="630,124,640,216" title="运城市 AQI指数 47">
+<area shape="rect" coords="659,106,669,216" title="忻州市 AQI指数 56">
+<area shape="rect" coords="687,81,697,216" title="临汾市 AQI指数 69">
+<area shape="rect" coords="715,55,725,216" title="吕梁市 AQI指数 82">
+<area shape="rect" coords="743,104,753,216" title="呼和浩特市 AQI指数 57">
+<area shape="rect" coords="771,94,781,216" title="包头市 AQI指数 62">
+<area shape="rect" coords="799,77,809,216" title="乌海市 AQI指数 71">
+<area shape="rect" coords="827,112,837,216" title="赤峰市 AQI指数 53">
+<area shape="rect" coords="855,132,865,216" title="通辽市 AQI指数 43">
+<area shape="rect" coords="884,91,894,216" title="鄂尔多斯市 AQI指数 64">
+</map></td>
+	</tr>
+</tbody></table>
+							</div> 
+						</center>
+						<div style="margin: 10px auto auto auto;">
+
+
+
+	
+		
+		<link href="css_2public.css" type="text/css" rel="stylesheet">
+		<link href="css_zwxx.css" type="text/css" rel="stylesheet">
+		<meta content="MSHTML 6.00.2900.3354" name="GENERATOR">
+	
+	
+		<table height="8" cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+			<tbody>
+				<tr>
+					<td height="8" bgcolor="#9DC0E0"></td>
+				</tr>
+			</tbody>
+		</table>
+<table height="63" cellspacing="0" cellpadding="0" width="980" align="center" border="0">
+  <tbody>
+  <tr>
+  	<td align="right" bgcolor="#ffffff" height="20">
+  		<img id="imgConac" vspace="0" hspace="0" border="0" src="red.png" data-bd-imgshare-binded="1">
+  	</td>
+    <td align="right" bgcolor="#ffffff" height="20">
+      <table class="t12l18" height="40" cellspacing="0" cellpadding="0" width="900" border="0">
+        <tbody>
+        <tr>
+	        <td valign="center" align="left" width="300" background="readmelin.gif">&nbsp;&nbsp;主　　办：中华人民共和国环境保护部 </td>
+	        <td valign="center" align="left" width="300" background="readmelin.gif">&nbsp;&nbsp;通讯地址：北京市西城区西直门南小街115号</td>
+	        <td valign="center" align="left" width="300" background="readmelin.gif">&nbsp;&nbsp;备案编号：<a class="txt12l20" href="http://www.miibeian.gov.cn/" target="_blank"><u>京ICP备05009132号</u></a>　<a class="txt12l20" href="http://check.sepa.gov.cn/sd/zhb/mainframe.jsp" target="_blank"></a></td>
+        </tr>
+        <tr>
+	        <td valign="center" align="left" width="300" background="readmelin.gif">&nbsp;&nbsp;技术支持：<a class="txt12l20" href="http://www.chinaeic.net/" target="_blank">中华人民共和国环境保护部信息中心</a></td>
+	        <td valign="center" align="left" width="600" background="readmelin.gif" colspan="2">&nbsp;&nbsp;邮　　编：100035</td>
+       </tr>
+            </tbody></table></td></tr></tbody></table>
+<script type="text/javascript" src="gs.js"></script>
+	
+
+</div>
+					</div>
+				</td>
+				<td width="10" background="right_bk.jpg">
+					&nbsp;
+				</td>
+			</tr>
+		</tbody></table>
+	
+<div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px;"><iframe src="My97DatePicker.html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 197px;"></iframe></div><div id="popupMask" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.4; display: none; background-color: rgb(51, 51, 51);"></div><div id="popupContainer" style="position: absolute; z-index: 901; display: none;"><div id="popupInner" style="border: 2px solid #000000;ackground-color: #ffffff;"><div style="background-color:#486CAE;color:#ffffff;font-weight:bold;height:17px;padding: 4px;border-bottom: 2px solid #000000;border-top: 1px solid #78A3F2;border-left: 1px solid #78A3F2;border-right: 1px solid #204095;position: relative;z-index: 903;" id="popupTitleBar"><div id="popupTitle" style="float:left;font-size:14px"></div><div id="popupControls" style="float: right;cursor: pointer;cursor: hand;"><span style="text-align:center;font-size:14px;BACKGROUND-COLOR: gray; WIDTH: 16px; HEIGHT: 16px; COLOR: #000000;border-left:1px solid #cccccc;border-top:1px solid #cccccc;border-right:1px solid #555555;border-bottom:1px solid #555555" id="popCloseBox" onclick="rq_hidePopWin();">X</span></div></div><iframe style="margin: 0px;position: relative;z-index: 902;BACKGROUND-COLOR: transparent;" id="popupFrame" frameborder="0" allowtransparency="" name="popupFrame" scrolling="auto" tabenabled="true"></iframe></div></div></body></html>
